@@ -1,0 +1,73 @@
+<html>
+<head>
+</head>
+<body>
+
+<style type="text/css">
+
+p
+{
+color:green;
+}
+h2
+{
+color:red;
+}
+
+footer
+{
+	color:aqua;
+}
+
+#test1 
+{
+color:green;
+font-family:verdana;
+font-size:1.2em;
+}
+
+.test2 
+{
+color:yellow;
+font-family:verdana;
+font-size:1.8em;
+}
+
+[src]
+{
+border:solid green 3px;
+}
+
+table td
+{
+color:blue;
+font-family:verdana;
+font-size:1.2em;
+}
+
+table caption
+{
+color:red;
+font-family:verdana;
+font-size:2em;
+}
+
+h1.test2 
+{
+color:green;
+font-family:verdana;
+font-size:1.2em;
+}
+
+hggroup h1,h2
+{
+	color:red;
+	font-family:verdana;
+	font-size:1.2em;	
+}
+
+
+</style>
+
+</body>
+</html>

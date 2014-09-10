@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link rel="stylesheet" href="Filonchyk.css" type="text/css" />
+
+<title>Филончик Евгений</title>
+</head>
+
+<body>
+<a href="http://tut.by">Hello World Tut.by!!!</a>
+
+<hr>
+
+<!-- Таблица -->
+<table class="table" width="253" height="336" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>1</td>
+    <td>Вася</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>2</td>
+    <td>Даша</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>3</td>
+    <td>Маша</td>
+  </tr>
+
+  <tr>
+    <td>&nbsp;</td>
+    <td>4</td>
+    <td>Петя</td>
+  </tr>
+  <tr>
+    <td height="70">&nbsp;</td>
+    <td>5</td>
+    <td>Саша</td>
+  </tr>
+</table>
+
+<hr>
+
+<!-- Нумерованный список -->
+<div class="numspisok">
+
+<ol>
+<li>Вася</li>
+<li>Даша</li>
+<li>Маша</li>
+<li>Петя</li>
+<li>Саша</li>
+</ol>
+
+</div>
+
+<!-- Ненумерованный список -->
+<div id="nonumspisok">
+
+<ul>
+<li>Вася</li>
+<li>Даша</li>
+<li>Маша</li>
+<li>Петя</li>
+<li>Саша</li>
+</ul>
+
+</div>
+
+<!-- Заголовки -->
+<div class="zagolovki">
+<h1>Это вообще большой заголовок </h1>
+<h2>А это ещё больше заголовок</h2>
+<h3>Это побольше заголовок</h3> 
+<h6>Это маленький заголовок</h6>
+</div>
+
+
+
+<!-- Стили -->
+<hr>
+<i>Я пьяный</i> <br/> <br/>
+<b>Я жирный</b> <br/>
+<p>2<sup>n</sup></p>
+<p>A<sub>i,j</sub></p>
+<strong>А я очень важный</strong> <br/><br/>
+<em>Я важный</em> <br/><br/>
+<big>Я большой</big> <br/><br/>
+<small>Я мелкий</small> <br/><br/>
+<hr>
+
+<!-- Картинка с сюрпризом -->
+<a href='http://s.pikabu.ru/post_img/2013/08/16/6/1376639847_1262476219.jpg'><img src= http://tt-obraz.ru/wp-content/uploads/2012/09/button3.png width='250' height='250' /></a>
+
+<!-- Внутренний CSS стиль -->
+<style type='text/css'>
+.mylegend
+{
+font-family: "Times New Roman", Times, serif;
+font-size:2em;
+color:#7c001a;
+text-decoration: overline;
+}
+</style>
+
+<!-- Форма ввода -->
+<div class="form" align="center">
+<form>
+<fieldset >
+<legend class="mylegend">Поклацай меня Анон</legend>
+Что ты хочешь?: <br /><input type='text' name='login' /><br />
+Пароль:<br /> <input type='password' name='pas' /><br />
+
+<br /> Ты кто?<br />
+<input type='radio' name='session' value='1' /> 
+М
+<input type='radio' name='session' value='2' /> 
+Ж <br /><br />
+<input type='button' value="Войди в меня" />
+</fieldset>
+</form>
+</div>
+
+
+<span>
+<iframe src='http://www.belgazeta.by/ru/2004_11_15/reklamnyi_mir/8542/' width='500' height='500'></iframe>
+&nbsp; &nbsp;
+<iframe src='http://google.by' width='500' height='500'></iframe>
+&nbsp; &nbsp;
+<iframe src='http://tut.by' width='500' height='500'></iframe>
+</span>
+
+
+
+</body>
+
+
+</html>

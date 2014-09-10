@@ -1,0 +1,35 @@
+
+.table
+{
+font-family: Arial, Helvetica, sans-serif;
+font-size:1.4em;
+color: #FFF;
+background: #333;
+}
+
+.numspisok
+{
+font-family: Verdana, Geneva, sans-serif;
+font-size:1.4em;
+color: #966;
+text-decoration:underline;
+}
+
+#nonumspisok
+{
+font-family: "MS Serif", "New York", serif;
+font-size:2em;
+color: #00F;
+text-align: start;
+}
+
+div
+{
+	font-family:"Comic Sans MS", cursive
+	font-size: 2em;	
+}
+
+[src]
+{
+border:solid green 3px;
+}

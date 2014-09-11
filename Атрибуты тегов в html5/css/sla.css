@@ -1,0 +1,17 @@
+p.Lorem {text-align: center; color: red}
+
+#Up {text-shadow: 1px 1px 2px black, 0 0 1em blue; color: black}
+
+#Middle {font: caption; color: green; cursor: help}
+
+p#UnderMiddle {text-align: center; color: red}
+
+p > i {color: darkgreen; border: dotted; }
+
+b i {color: darkred}
+
+p b {color: black}
+
+img {opacity: 0.5; height: 227px; width: 231px}
+
+iframe {height: 280px; width: 1000px; resize: both}

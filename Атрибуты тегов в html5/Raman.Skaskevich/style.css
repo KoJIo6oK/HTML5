@@ -1,0 +1,57 @@
+a:link {
+	color:#00F;
+}
+a:visited {
+	color:#999999;
+}
+a:hover {
+	color:red;font-family:"Comic Sans MS", cursive;
+}
+.main{
+	min-height:610px;
+	width:400px;
+	color:red;
+	position:absolute;
+	background-image: url(pic.jpg);
+	left: 7px;
+	top: 9px;
+	
+}
+.head{
+	height:50px;
+	width:360px;
+	background-color:yellow;	 
+	position:relative;
+	margin:20px 20px 20px 20px;	
+}
+.body{
+	min-height:450px;
+	width:360px;
+	background-color:white;
+	position:relative;
+	margin:20px 20px 20px 20px;	
+}
+.footer{
+	height:50px;
+	width:360px;
+	background-color:yellow;	 
+	position:relative;
+	margin:20px 20px 20px 20px;	
+}
+.tableExample{
+	border:thin;
+	border-color:black;
+}
+.fontClass1{
+	color:red; 
+	font-size:10px;
+}
+.fontClass2{
+	color:blue;
+	font-size:20px;
+}
+.cr{
+	color:purple;
+	font-family:"Comic Sans MS", cursive;
+}
+

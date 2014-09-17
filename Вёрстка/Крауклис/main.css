@@ -1,0 +1,56 @@
+<style type='text/css'>
+
+* { padding-left: 0px;}
+*{
+    display: inline-block;
+}
+body  {
+  padding: 0px;
+  margin: 0px;
+}
+
+.common {
+  background-color: #000;
+  display: inline-block;
+  font-family: Helvetica, Ariel, sans-serif;
+  border-bottom: 2px solid gray;
+  font-size:14px;
+}
+
+.text {
+  color: white;
+  text-transform: uppercase;
+  font-weight:bold;
+  float:left;
+  padding: 20px 10px 0px 10px;
+}
+
+.image {
+  padding: 0px 0px 0px 20px;
+}
+
+#red {
+  color:#DD0000;
+  padding: 20px 10px 0px 10px;
+}
+
+.imgPicture {
+  display: inline-block;
+  overflow: hidden;
+  position: absolute;
+  padding: 0px 0px 0px 30px;
+  }
+
+#lab2 {
+  position: absolute;
+  padding: 10px 0px 0px 80px
+}
+
+#footer{
+  width: 563px;
+  height: 5px;
+  background: black;
+  display: block;
+}
+
+</style>

@@ -1,0 +1,55 @@
+﻿button
+{
+	background-image: url(button.jpg);
+	background-color:transparent;
+	background-size: contain;
+	width: 204px;
+	height: 69px;
+	float: left;
+	text-align:center;
+	border-width:0;
+	position: relative;
+	z-index: 1;
+	-moz-transform: rotate(-7deg);
+    -ms-transform: rotate(-7deg);
+    -webkit-transform: rotate(-7deg);
+    -o-transform: rotate(-7deg);
+	transform: rotate(-7deg);
+	font-family: Script MT Bold;
+	font-size:35px; color:#FDFFFE; 
+    text-shadow: #333 1px 1px 1px, 
+                 #fff 0px 0px 0px;
+	opacity:1;
+	margin: -5px -5px -1px -1px;
+}
+
+.galary
+{
+    -moz-transform: rotate(0.1deg); /* Для Firefox */
+    -ms-transform: rotate(0.1deg); /* Для IE */
+    -webkit-transform: rotate(0.1deg); /* Для Safari, Chrome, iOS */
+    -o-transform: rotate(0.1deg); /* Для Opera */
+    transform: rotate(0.1deg);
+	position: relative; 
+	z-index: 2;
+	margin: 8px 5px 5px 5px;
+}
+
+body
+{
+	background-image: url(background.png);
+	background-color:#333333;
+	opacity:1
+}
+
+button:link, button:visited, button:hover, button:focus, button:active {
+outline: 0;
+}
+
+ @font-face {
+    font-family: Script MT Bold;
+    src: url('SCRIPTBL.TTF') format('truetype'), 
+		 url('SCRIPTBL.EOT') format('eot');
+   }
+ 
+}

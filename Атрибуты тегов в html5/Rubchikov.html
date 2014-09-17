@@ -3,29 +3,27 @@
 
 	<head>
 		<title>Пример Web-страницы</title>
-		<hr>
+		<link rel="stylesheet" type="text/css" href="RubchikovVV.css"> <!-- Связываем наш документ с внешним CSS файлом, который в той же папке-->
 		<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8"> <!-- Метатег, задающий кодировку, в которой сохранена Web-страница. -->
+
 	</head>
 
-	<body style='background-color:#557A55;'>
+	<body style='background-color: #6DBD6D;'>
 		<h1>Справочник по HTML</h1>
 		<hr/>
 		<hr>
 		<p>Приветствуем на нашем Web-сайте всех, кто занимается <EM><strong>Web-дизайном</strong></EM>!
-		Здесь вы сможете найти информацию о части тегов, применяемых при создании <strong>Web-страниц</strong>.</p>
+	Здесь вы сможете найти информацию о некоторых тегах, применяемых при создании <strong>Web-страниц</strong>.</p>
 		
 		С более подробной информацией есть сайт - <a href="http://www.wisdomweb.ru">wisdomweb.ru</a><br />
-		<img src='http://copypast.ru/uploads/posts/1311240581_y.jpg' width='300' height='250' />
-
-		<p>
-			<h3> Примеры с дочерними и родительскими тегами<br />
+		<img src='https://pp.vk.me/c620128/v620128775/3674/K2HaS3GodYU.jpg' width='400' height='300' />
+        
+	<p><h3> Примеры с дочерними и родительскими тегами<br />
 				(Тег заголовка является дочерним к тегу абзаца и родительским к тегу <em>курсива</em>). </h3></p>
 
-<style type="text/css">
-mark {background-color:lightblue;}
-</style>
-
-		<p> С помощью тэга <mark>mark</mark> мы можем выделять на страницах <mark>важный</mark> текст.</p>
+				<style type="text/css">mark {background-color:lightblue;}</style> 
+		
+<p>С помощью тэга <mark>mark</mark> мы можем выделять на страницах <mark>важный</mark> текст.</p>
 
 		<form>
 			<fieldset>
@@ -46,17 +44,17 @@ mark {background-color:lightblue;}
 			<fieldset>
 				<legend> Анкета: </legend>
 			<p><em>Как вы относитесь к самостоятельной работе?</em></p>
-			<input type="checkbox" name="work" value="1" /> Положительно. Всегда хотел быть в одиночестве<br />
-			<input type="checkbox" name="work" value="2" /> Безразлично. Ваще <b>пох</b> <br />
-			<input type="checkbox" name="work" value="3" /> Отритцательно. Меня с детства отталкивают мысли об одиночестве <br />
+			<input type="checkbox" name="work" value="1" /> Положительно. Всегда хотел быть в одиночестве. <br />
+			<input type="checkbox" name="work" value="2" /> Безразлично.<br />
+			<input type="checkbox" name="work" value="3" /> Отритцательно. Меня с детства отталкивают мысли об одиночестве. <br />
 		</fieldset>
 		</form>
 
-		<i>Этот текст написан курсивом.</i>
-		<p>Это обычный текст<sub>это текст в нижнем индексе.</sub></p>
-		<p>Это обычный текст<sup>это текст в верхнем индексе.</sup></p>
-		<em>Данный тэг определяет важное содержимое.<em>
-		<strong>Данный тэг определяет очень важное содержимое.<strong>
+		<i>Курсив.</i>
+		<p>Обычный текст<sub>Нижний индекс.</sub></p>
+		<p>Обычный текст<sup>Верхний индекс.</sup></p>
+		<em>Данный тэг определяет важное содержимое.</em>
+		<strong>Данный тэг определяет очень важное содержимое.</strong>
 		<big>Размер шрифта этого текста увеличен.</big>
 		<small>Размер шрифта этого текста уменьшен.</small>
 		<hr>
@@ -71,9 +69,10 @@ mark {background-color:lightblue;}
 		</pre>
 		<hr>
 
-		<p>Пример таблицы<table border=1>
+		<p>Пример таблицы<table border=1 id='css'>
+		<tr><th>Первый</th><th>Второй</th><th>Третий</th></tr>
 		<tr><td>1.1</td><td>1.2</td><td>1.3</td></tr>
-		<tr><td>2.1</td><td>2.2</td><td>2.3</td></tr>
+		<tr style='background-color:#d1d2db'><td>2.1</td><td>2.2</td><td>2.3</td></tr>
 		<tr><td>3.1</td><td>3.2</td><td>3.3</td></tr>
 		</table></p>
 		<hr>
@@ -122,6 +121,6 @@ mark {background-color:lightblue;}
 		<p> Cтроковый фрейм с сайтом tut.by: </p>
 		<iframe src='http://tut.by' width='1000' height='500'></iframe>
 		<hr>
-
+<!-- #BeginDate format:acSw1m -->Пт, 12 Сентябрь, 2014  14:21<!-- #EndDate -->
 	</body>
 </html>

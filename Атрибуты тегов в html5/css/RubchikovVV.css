@@ -1,0 +1,75 @@
+/*Селекторы для таблицы: */
+#css table
+{
+	border-collapse:collapse;
+	font-family:verdana;
+}
+
+/*Селектор для табличного заголовка*/
+#css th
+{
+	background-color:#1027ff;
+	padding:7px;
+	font-size:1.2em;/*Свойство, меняющее размер шрифта. em ~ 16px*/
+	border:5px black solid;
+	color:red;
+}
+
+/*Селектор для табличной ячейки*/
+#css td
+{
+	padding:3px;
+	border:2px solid;/**толщина границ у ячеек*/
+	text-align:center;/*Выравнивание текста*/
+}
+
+/*Селекторы для цвета текста в заголовках h1-h6*/
+h1 {color:green; background-color:#12ffF7;text-align:center;} /*Также здесь исп-ся цвет фона + выравнивание*/
+h2 {color:#821363}
+h3 {color:blue; background-color:#ffffff;text-align:right;}
+h4 {color:white}
+h5 {color:yellow}
+h6 {color:orange}
+
+/*Селектор атрибоутов*/
+[src] {border:solid red 5px;}
+
+/*Свойства селектора будут применены только к тем элементам с class="selektkomb", которые являются заголовками h4*/
+h4.selektkomb
+{
+	color:yellow;
+	font-family:arial;
+	font-size:2em;
+}
+
+/*Группируем селекторы для классов с одинаковыми свойствами разделяя их запятой*/
+.sel1,.sel2
+{
+	color:#652281;
+	font-family:verdana;
+	font-size:1.5em;
+}
+
+/*Селектор для ссылки на подборщик цветов*/
+#pc,[href="http://www.wisdomweb.ru/CSS/colorpicker.php"]/*Оформит все элементы, атрибут href которых имеет значение http://www.wisdomweb.ru/CSS/colorpicker.php */
+{
+	color:rgb(60,230,180);
+	font-family:sans-serif;
+	font-size:2em;
+	text-align:right;
+}
+
+/*Список селекторов с разными видами свойства text-decoration*/
+#texd1 {text-decoration:underline;}
+#texd2 {text-decoration:line-through;}
+#texd3 {text-decoration:overline;}
+
+/*Селектор для примера работы свойства letter-spacing*/
+#texlet{letter-spacing:10px;font-family:verdana;}
+
+/*Селектор для примера работы свойства word-spacing*/
+#ws1 {word-spacing:15px;}
+
+/*Селекторы для примера работы свойства direction*/
+#dir1 {direction:rtl;}
+#dir2 {direction:ltr;}

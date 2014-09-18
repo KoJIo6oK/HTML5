@@ -2,10 +2,39 @@
 <html>
 
 	<head>
-		<title>Пример Web-страницы</title>
+		<title>RubchikovVV</title>
 		<link rel="stylesheet" type="text/css" href="RubchikovVV.css"> <!-- Связываем наш документ с внешним CSS файлом, который в той же папке-->
-		<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8"> <!-- Метатег, задающий кодировку, в которой сохранена Web-страница. -->
+		<meta charset="utf-8"> <!-- Метатег, задающий кодировку, в которой сохранена Web-страница. -->
 
+		<style type='text/css'> 
+		/*Вездесущая картинка. Причем тут краткая форма записи свойств background*/
+		body 
+		{
+			background:url('https://pp.vk.me/c624620/v624620044/2742/SvR9wRYvj7Q.jpg') no-repeat fixed right top;
+		}
+
+		/*Оформление обычных непосещенных ссылок*/		
+		a:link 
+		{
+			text-decoration:none;
+			color:blue;
+		}
+		/*Оформление ссылок на которые наведен курсор мыши*/	
+		a:hover 
+		{
+			text-decoration:overline;
+			color:pink;
+			font-size:1.5em;
+		}
+		/*Оформление ссылок на которые щелкнули мышкой*/		
+		a:active 
+		{
+			text-decoration:none;
+			color:red;
+			font-size:2em;
+		}
+
+		</style>
 	</head>
 
 	<body style='background-color: #6DBD6D;'>
@@ -15,15 +44,19 @@
 		<p>Приветствуем на нашем Web-сайте всех, кто занимается <EM><strong>Web-дизайном</strong></EM>!
 	Здесь вы сможете найти информацию о некоторых тегах, применяемых при создании <strong>Web-страниц</strong>.</p>
 		
-		С более подробной информацией есть сайт - <a href="http://www.wisdomweb.ru">wisdomweb.ru</a><br />
+		За более подробной информацией есть сайт - <a href="http://www.wisdomweb.ru">wisdomweb.ru</a><br />
 		<img src='https://pp.vk.me/c620128/v620128775/3674/K2HaS3GodYU.jpg' width='400' height='300' />
         
 	<p><h3> Примеры с дочерними и родительскими тегами<br />
-				(Тег заголовка является дочерним к тегу абзаца и родительским к тегу <em>курсива</em>). </h3></p>
+				(Тег заголовка является дочерним к тегу абзаца и родительским к тегу <em>особого курсива</em>). </h3></p>
 
 				<style type="text/css">mark {background-color:lightblue;}</style> 
 		
-<p>С помощью тэга <mark>mark</mark> мы можем выделять на страницах <mark>важный</mark> текст.</p>
+	<p>С помощью тэга <mark>mark</mark> мы можем выделять на страницах <mark>важный</mark> текст.</p>
+
+	<p><h4 class="selektkomb">Здесь у нас отработает комбинированный селектор</h4></p>
+
+
 
 		<form>
 			<fieldset>
@@ -92,7 +125,7 @@
 		<hr>
 
 		<p>Ссылка расположенная ниже при переходе на нее будет открыта в новой вкладке браузера: </p>
-		<a href='http://www.wisdomweb.ru' target='blank'>www.wisdomweb.ru </a>
+		<a href='http://www.wisdomweb1.ru' target='blank'>www.wisdomweb1.ru </a>
 		<hr>
 
 		<table border="20">
@@ -118,9 +151,46 @@
 		</ul>
 		<hr>
 
+		<p class="sel1">(sel1)Этот абзац вместе со следующим</p>
+		<p class="sel2">(sel2)Обрабатывается селектором, который прописан через запятую для двух классов</p>
+		<hr>
+
+		<p><h2>Показываем работу селекторов со свойством text-decoration</h2></p>
+		<p id="texd1">Подчеркнутый</p>
+		<p id="texd2">Перечеркнутый</p>
+		<p id="texd3">Над текстом линия</p>
+		<hr>
+
+		<p id="texlet">Пример работы свойства letter-spacing с величиной отступа между буквами в 10 пикс</p>
+		<hr>
+
+		<p id="ws1">Пример работы свойства word-spacing с величиной отступа между словами в 15 пикс</p>
+		<hr>
+
+		<p id="dir1"> Направление текста rtl</p>
+		<p id="dir2"> Направление текста ltr</p>
+		<hr>
+
+		<p><h2>Список безопасных шрифтов:</h2></p>
+		<p style='font-family:Arial;'>Шрифт Arial.</p> 
+		<p style='font-family:"Arial Black","Times New Roman",Arial;'>Шрифт Arial Black.</p> 
+		<p style='font-family:"Comic Sans MS","Times New Roman",Arial;'>Шрифт Comic Sans MS.</p> 
+		<p style='font-family:"Courier New","Times New Roman",Arial;'>Шрифт Courier New.</p>
+		<p style='font-family:Georgia,"Times New Roman",Arial;'>Шрифт Georgia.</p>
+		<p style='font-family:Impact,"Times New Roman",Arial;'>Шрифт Impact.</p>
+		<p style='font-family:"Times New Roman",Arial;'>Шрифт Times New Roman (стоит по умолчанию).</p>
+		<p style='font-family:"Trebuchet MS","Times New Roman",Arial;'>Шрифт Trebuchet MS.</p>
+		<p style='font-family:Verdana,"Times New Roman",Arial;'>Шрифт Verdana.</p>
+		<!--Здесь же реализовано свойство резервных шрифтов-->
+		<hr>
+
+
+
 		<p> Cтроковый фрейм с сайтом tut.by: </p>
 		<iframe src='http://tut.by' width='1000' height='500'></iframe>
 		<hr>
 <!-- #BeginDate format:acSw1m -->Пт, 12 Сентябрь, 2014  14:21<!-- #EndDate -->
 	</body>
+	<p id="pc"><a href="http://www.wisdomweb.ru/CSS/colorpicker.php" target='blank'>Подборщик цветов</a></p>
+
 </html>

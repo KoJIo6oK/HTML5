@@ -1,0 +1,59 @@
+body{
+    background-color: 2B3442; /* background */
+	font-family: Microsoft YaHei;/*шрифт найти такой не смог. перебрал 150 шрифтов, этот более-менее похож*/
+   } 
+.table{
+   padding:0px 0px 0px 1px;/* где-то пиксель потерял, пришлось подогнать */
+   }
+.table th{
+	letter-spacing: 1px;
+	padding: 19px 120px 5px 30px;
+	font-size: 13px;
+	color: E2EEFF;
+}
+.table td{
+	padding: 15px 0px 0px 30px;
+	font-size: 12px;
+	color: 899BB2;
+}
+hr {/* на тему hrника. можно было сделать в канвасе линию, можно было сделать прямоугольник высотой в пиксель в том же канвасе. мне было лень. */
+width: 502px;
+height: 1px;
+background-color:555F6E;
+border: 0 none;
+margin-left: 0px;
+margin-top:30px;
+}
+.inputButtonGroup{
+	padding:22px 0px 0px 29px;
+	float: left;
+}
+
+.input {
+  width: 376px;
+  height: 35px;
+  padding-left: 13px;
+  font-size: 14px;
+  color: 555555;
+  vertical-align: middle;
+  background-color: 45546D;
+  border-left: 1px solid 45546D;
+  color: 899BB2;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border:0px;
+  }
+  .button
+  {
+  width:101px;
+  height:35px;
+  color: 555555;
+  vertical-align: middle;
+  background-color: 4E8EF7;
+  border-right: 1px solid 45546D;
+  color: E8FFFF;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border:0px;
+  letter-spacing: 1px;
+  }

@@ -1,0 +1,25 @@
+body{
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 13px;
+}
+.calendar{
+	border-collapse: collapse;
+}
+.calendar td{
+	border: 1px solid #fff;
+}
+.calendar tr td{
+	background: #dddddd;
+}
+.calendar tr th{
+	color: #666;
+}
+.calendar .active{
+	background: #ffc52e
+}
+.calendar .tr-h{
+	background: white;
+}
+h1{
+	font-size: 16px;
+}

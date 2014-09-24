@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>javascript basics</title>
+    <script charset="utf-8">
+      var str1 = "welcome to new new super puper new vegas";
+      var str2 = "new";
+
+    function searchByAlgor(str, sequence)
+    {
+      var count = 0;
+      for(var i=0;i<str.length-sequence.length;i++)
+        {
+          if(str.charAt(i)===sequence.charAt(0))
+            {
+                if(checker(str,sequence, i))
+                  {
+                    count++;
+                  }
+            }
+        }
+        return count;
+    }
+    function checker(str, seq, start)
+    {
+      for(var i=start; i<seq.length; i++)
+        {
+          if(str.charAt(start)!==seq.charAt(i)){
+            return false;
+          }
+        }
+        return true;
+    }
+    function searchByReg(str, sequence)
+    {
+      //ya tut ponyal. na koy mne nujno kolichestvo sovpadeniy. nu ne vajno
+      var regExp = new RegExp(sequence);
+        if (regExp.test(str)) {
+            console.log("Found it");
+        } else {
+            console.log(str+ " doesnt contain "+sequence);
+        }
+    }
+    console.log(str1+" have "+searchByAlgor(str1,str2) +" matches of "+ str2);
+    searchByReg(str1, str2);
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

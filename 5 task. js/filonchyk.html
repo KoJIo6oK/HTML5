@@ -1,0 +1,207 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+ 
+  <title>Регистрация</title>
+  <form>
+  <p class="Registration">Регистрация нового пользователя</p>
+  <p> Введите Фамилию: </p>  <input type="text" id="FirstNameString" placeholder="Фамилия" onblur = "checkfirst()"></input>  <span id="ErrorFirst"> </span> </br>
+  <p> Введите Имя: </p>	<input type="text" id="SecondNameString" placeholder="Имя" onblur = "checksecond()" ></input> <span id="ErrorSecond"> </span> </br>
+  <p> Введите Дату Рождения: </p> <input type="date" id="DateTime" onblur = "checkdata()" ></input> <span id="ErrorData"> </span> </br>
+  <p> Введите Телефон (в формате +375-YY-XXX-XX-XX): </p> 	<input type="text" id="TelephoneString" placeholder="Телефон" onblur = "checktel()"></input> <span id="ErrorTelephone"> </span> </br>
+  <p> Введите E-mail: </p> 	<input type="text" id="EmailString" placeholder="E-mail" onblur = "checkmail()"></input> <span id="ErrorEmail"> </span> </br> </br>
+   <input type="button" value="Добавить" onclick="Add()"/>
+  </form>
+  
+<div align="Center">
+<p> Список пользователей: </p>
+</div>
+
+<table id="block" align="Center" border="1">
+
+</table>
+
+
+<script type="text/javascript">
+var db = openDatabase('mydb', '1.0', 'Test DB', 5 * 1024 * 1024);
+	  
+	  
+	    db.transaction(function (tx) {
+	   // tx.executeSql('drop table USERS;');
+        tx.executeSql('CREATE TABLE IF NOT EXISTS USERS (id unique, FirstName,SecondName,Date,Telephone,Mail);');
+		});
+		ShowUsers();
+		
+function Add(){
+
+First=document.getElementById("FirstNameString").value;
+Second=document.getElementById("SecondNameString").value;
+Data=document.getElementById("DateTime").value.replace(/(\d+).(\d+).(\d+)/, '$3.$2.$1');
+Telephone=document.getElementById("TelephoneString").value;
+Mail=document.getElementById("EmailString").value;
+  
+
+  if(Validate())
+  {
+  
+	AddToBase(First,Second,Data,Telephone,Mail)
+ 
+  }
+  
+  ShowUsers();
+}
+
+function Validate()
+{
+
+if( checkfirst() && checksecond() && checkdata() && checktel() && checkmail())
+return true;
+
+}
+
+function checkfirst()
+{
+Firstvalidate=document.getElementById("FirstNameString").value;
+
+if(Firstvalidate != "")
+document.getElementById("ErrorFirst").innerHTML= "";
+else
+{document.getElementById("ErrorFirst").innerHTML= "Введите фамилию"; return false;}
+
+return true;
+}
+
+function checksecond()
+{
+Secondvalidate=document.getElementById("SecondNameString").value;
+
+if(Secondvalidate != "")
+document.getElementById("ErrorSecond").innerHTML= "";
+else
+{document.getElementById("ErrorSecond").innerHTML= "Введите имя"; return false;}
+
+return true;
+}
+
+function checkdata()
+{
+Datavalidate=document.getElementById("DateTime").value;
+
+if(Datavalidate != "")
+document.getElementById("ErrorData").innerHTML= "";
+else
+{document.getElementById("ErrorData").innerHTML= "Неправильный ввод даты рождения"; return false;}
+
+return true;
+}
+
+function checktel()
+{
+Telephonevalidate=document.getElementById("TelephoneString").value.match(/\++\b375+\-+\d{2}\-\d{3}\-\d{2}\-\d{2}$/);
+
+if(Telephonevalidate)
+document.getElementById("ErrorTelephone").innerHTML= "";
+else
+{document.getElementById("ErrorTelephone").innerHTML= "Неправильный ввод номера телефона (Например: +375-25-111-11-11)"; return false;}
+
+return true;
+}
+
+function checkmail()
+{
+Emailvalidate=document.getElementById("EmailString").value.match(/\w+@\w+\.\w+/);
+
+if(Emailvalidate)
+document.getElementById("ErrorEmail").innerHTML= "";
+else
+{document.getElementById("ErrorEmail").innerHTML= "Неправильный ввод E-mail адреса (Например: blablabla@mail.ru)"; return false;}
+
+return true;
+}
+
+
+function AddToBase(First,Second,Data,Telephone,Mail){
+var lastid = 0;
+var checkinbase = false;
+
+   db.readTransaction(function (tx) {
+		 
+		 tx.executeSql('SELECT * FROM USERS WHERE FirstName = ? and SecondName = ?  and Date = ?  and Telephone = ?  and Mail = ? ', [First,Second,Data,Telephone,Mail], function(tx, results){
+		
+		 if(results.rows.length > 0)
+		 {
+		checkinbase = true;
+		alert("Данный пользователь уже зарегистрирован");
+		 }
+
+		 });});
+
+
+  db.readTransaction(function (tx) {
+		 
+		 tx.executeSql('SELECT ID FROM USERS ORDER BY ID DESC LIMIT 1', [], function(tx, result){
+
+		  if(result.rows.length > 0)
+		 lastid = result.rows.item(0).id; 
+
+		 });});
+		 
+		 
+  db.transaction(function (tx) {
+		
+			if( checkinbase )
+			return false;
+         tx.executeSql('INSERT INTO USERS (id, FirstName,SecondName,Date,Telephone,Mail) VALUES (?, ?,?,?,?,?);',[lastid+1, First,Second,Data,Telephone,Mail]);
+      });
+}
+
+function ShowUsers(){
+  db.readTransaction(function (tx) {
+		 
+		 tx.executeSql('SELECT * FROM USERS ORDER BY ID', [], function(tx, results){
+		var msg ="<tr><th>Id</th><th>Фамилия</th><th>Имя</th><th>Дата Рождения</th><th>Номер телефона</th><th>E-Mail</th></tr>\n";
+		for (var i = 0; i < results.rows.length; i++) {
+		
+		
+               msg += "<tr><td>"+results.rows.item(i).id
+               + "</td><td>"+results.rows.item(i)["FirstName"] + "</td><td>"+results.rows.item(i)["SecondName"] + "</td><td>"+results.rows.item(i)["Date"] + "</td><td>"+results.rows.item(i)["Telephone"] + "</td><td>"+results.rows.item(i)["Mail"] + "</td></tr>"
+              }
+     
+              document.getElementById('block').innerHTML = msg; 
+
+		 });});
+		 
+		 
+}
+
+</script>
+</head>
+<body>
+
+<style type='text/css'>
+
+table
+{
+font-family: Arial, Helvetica, sans-serif;
+font-size:1.4em;
+}
+
+span
+{
+font-family: Verdana, Geneva, sans-serif;
+font-size:0.9em;
+color: #F00;
+}
+
+ .Registration
+{
+	font-family:"Comic Sans MS", cursive;
+	font-size: 1.5em;	
+}
+
+</style>
+
+
+</body>
+</html>

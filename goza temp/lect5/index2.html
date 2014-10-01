@@ -1,0 +1,100 @@
+<html>
+  <head>
+    <title>CRUD Manager</title>
+    <script charset="utf-8">
+      var db = openDatabase('myDb2', '1.0', 'My database', 3 * 1024 * 1024);
+      /*
+      db.transaction(function (tx) {
+        tx.executeSql('drop table my_table;');
+        tx.executeSql('CREATE TABLE IF NOT EXISTS MY_TABLE (id unique, my_value);');
+        tx.executeSql('INSERT INTO MY_TABLE (id, my_value) VALUES (1, "Hello world");');
+        tx.executeSql('INSERT INTO MY_TABLE (id, my_value) VALUES (2, "Hello world 2");');
+        tx.executeSql('INSERT INTO MY_TABLE (id, my_value) VALUES (3, "Hello world 3");');
+      });
+      */
+      function showData(data){
+        var msg = "";
+        if (data == null){
+        db.readTransaction(function (tx){
+            tx.executeSql('select * from MY_TABLE', [], function(tx, results){
+              for (var i = 0; i < results.rows.length; i++) {
+                msg += "<li>id: "+results.rows.item(i).id
+                + ", value: "+results.rows.item(i)["my_value"] + "</li>"
+              }
+              //console.log(results.rows.item(1).my_value);
+              document.getElementById('dataContainer').innerHTML = msg;
+            });
+
+        });
+      } else {
+        // bad code here!
+        for (var i = 0; i < data.rows.length; i++) {
+          msg += "<li>id: "+data.rows.item(i).id
+          + ", value: "+data.rows.item(i)["my_value"] + "</li>"
+        }
+        //console.log(results.rows.item(1).my_value);
+        document.getElementById('dataContainer').innerHTML = msg;
+      }
+      }
+
+      this.CrudManager = function(){
+        this.add = function(id, value, callback, errorCalback){
+          //console.log("added "+ id + " value"+ value);
+          db.transaction(function (tx){
+              tx.executeSql('insert into MY_TABLE (id, my_value) values (?, ?)',
+              [id, value], callback, errorCalback);
+          });
+        };
+        this.filter = function(query, callback, errorCalback){
+          db.transaction(function (tx){
+              tx.executeSql(query, [], callback, errorCalback);
+          });
+        };
+      };
+
+      var crudManager = new CrudManager();
+
+      this.DataHelper = function(){
+        this.add = function(){
+           var id = document.getElementById('id').value;
+           var value = document.getElementById('value').value;
+           if (id == null && value == null){
+             alert("id or value is empty");
+             return;
+           }
+           crudManager.add(id, value, null, function(tx, e){alert("Error due to add: "+ e.message)});
+           showData();
+        };
+        this.filter = function(){
+            var query = document.getElementById('query').value;
+            if (!query){
+              alert('query is empty');
+              return;
+            }
+            crudManager.filter(query, function(tx, data){
+              showData(data);
+            }, function (tx, e){
+               alert(e.message);
+            });
+          };
+      };
+
+      var dataHelper = new DataHelper();
+      showData();
+
+    </script>
+  </head>
+  <body>
+    <input type="field" id="id" name="id" placeholder="type id" value="">
+    <input type="field" id="value" name="some_name" value="" placeholder="type value">
+
+    <input type="button" id="add" name="add" value="ADD" onclick="dataHelper.add();">
+    <br>
+    <input type="field" id="query" size="45" name="" value="select * from my_table where id=1" placeholder="query">
+    <input type="button" name="some_name" value="FILTER" onclick="dataHelper.filter();">
+
+    <ul id="dataContainer">
+
+    </ul>
+  </body>
+</html>

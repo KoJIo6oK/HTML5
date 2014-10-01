@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyTitle</title>
+</head>
+<body>
+<script>
+console.log("Quick Sort");
+function partition (array,start,end)
+   {
+       var marker = start;
+       for (i = start; i <= end; i++)
+       {
+           if ( array[i] <= array[end] )
+           {
+               var temp = array[marker];
+               array[marker] = array[i];
+               array[i] = temp;
+               marker += 1;
+           }
+       }
+       return marker - 1;
+   }
+
+   function quicksort (array,start,end)
+   {
+       if ( start >= end )
+       {
+           return;
+       }
+       var pivot = partition (array, start, end);
+       quicksort (array, start, pivot-1);
+       quicksort (array, pivot+1, end);
+   }
+   var array = new Array (5,3,22,11,45,213,1,-100500,0,20);
+   console.log("========================================");
+   console.log("Array before Quick Sort");
+   for(i=0;i<10;i++)
+    console.log(array[i]+" ");
+   quicksort(array,0,9);
+   console.log("========================================");
+   console.log("Array after Quick Sort");
+   for(i=0;i<10;i++)
+    console.log(array[i]+" ");
+
+</script>
+</body>
+</html>

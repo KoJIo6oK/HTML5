@@ -1,0 +1,42 @@
+<html> <!--Почему браузер ругался, когда было написано !DOCTYPE ???-->
+
+	<head>
+	<title>RubchikovVV_lab4</title>
+	<meta charset="utf-8">
+	<script charset="utf-8">
+
+	var ar = [-3,-2,1,2,-1,3,6,10];
+	console.log('Изначальное множество: {' + ar + '} из ' + ar.length + '-элементов');
+
+	var komb = Math.pow(2,ar.length);	//Кол-во всех комбинаций подмножеств
+	console.log("Количество всех комбинаций подмножеств - "+komb);
+	console.log("Подмножества, удовлетворяющие условию \"Сумма элементов = 0\": ");	
+	var arr=[];
+	var sum=null;
+	var t=0;
+	for (var i = 0; i < komb; i++) 
+	{
+		for (var j = 0; j < ar.length; j++) 
+		{
+			if (i & (1<<j))
+			{
+				sum+=ar[j];
+				arr.push(ar[j]);
+			};
+		};
+		if(sum==0)
+		{	
+			t++;
+			console.log(t+") {"+arr+"}");
+		};
+		sum=null;
+		arr=[];		
+	};
+	</script>
+	</head>
+
+	<body>
+	<p>1. Нажмите комбинацию клавиш - "Shift" + "Ctrl" + "J" или "F12"</p>
+	<p>2. Выберите вкладку - "Console"</p>
+	</body>
+</html>
